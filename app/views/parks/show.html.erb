@@ -1,5 +1,5 @@
 <header><h1 class="display-4"><%= @park.name %></h1></header>
 <p>Address: <%= @park.address %></p>
 <p>Coordinates: <%= @park.latitude %> <%= @park.longitude %></p>
-<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@park.latitude},#{@park.longitude}&markers=#{@park.latitude},#{@park.longitude}&zoom=7&size=640x400&key=AIzaSyApXygBIE9ZhcVgMODQT14OabRXNQl40Go",
+<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@park.latitude},#{@park.longitude}&markers=#{@park.latitude},#{@park.longitude}&zoom=7&size=640x400&key=#{ENV['GOOGLE_API']}",
               class: 'img-fluid img-rounded', alt: "#{@park.name} on the map" %>
