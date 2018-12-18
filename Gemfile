@@ -10,6 +10,7 @@ gem 'redis'
 gem 'coffee-rails'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
+gem 'devise'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
