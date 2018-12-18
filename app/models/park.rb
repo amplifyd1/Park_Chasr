@@ -1,5 +1,6 @@
 class Park < ApplicationRecord
   attr_accessor :raw_address
+  mount_uploader :image, ImageUploader
 
   geocoded_by :raw_address
   reverse_geocoded_by :latitude, :longitude
