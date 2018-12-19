@@ -2,7 +2,7 @@ class VisitsController < ApplicationController
   # before_action :set_visit, only: [ :show, :destroy ]
 
   def index
-    @visits = Visit.all
+    @visits = Visit.where(user: current_user)
   end
 
   def new
