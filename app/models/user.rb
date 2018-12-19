@@ -9,5 +9,5 @@ class User < ApplicationRecord
   validates :latitude, presence: true, if: -> { address.nil? }
   geocoded_by :address
   after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
-
+  has_many :visits
 end

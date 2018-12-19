@@ -8,4 +8,5 @@ class Park < ApplicationRecord
   after_validation :reverse_geocode, unless: ->(obj) { obj.address.present? },
                    if: ->(obj){ obj.latitude.present? and obj.latitude_changed? and
                     obj.longitude.present? and obj.longitude_changed? }
+  has_many :visits
 end

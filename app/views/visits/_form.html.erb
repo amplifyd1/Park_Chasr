@@ -1,0 +1,11 @@
+<%= simple_form_for([current_user, @visit]) do |f| %>
+  <fieldset class="form-group">
+    <%= f.label :park %>
+    <%= f.association :park, collection: @parks, class: "form-control" %>
+  </fieldset>
+
+
+
+  <%= f.submit 'Create Visit', class: 'btn btn-primary' %>
+<% end %>
+
