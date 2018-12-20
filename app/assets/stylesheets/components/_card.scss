@@ -1,0 +1,37 @@
+.card {
+  justify-content: space-around;
+  // flex-grow: 1;
+  height: 300px;
+  width: 100%;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  position: relative;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 30px;
+}
+
+.card:hover {
+    box-shadow: 5px 5px 8px #888888;
+  }
+
+.card-description h2 {
+  font-size: 22px;
+}
+.card-description p {
+  font-size: 15px;
+}
+
+.row{
+  padding: 50px;
+}h3{
+  color:white;
+}
+
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+}

@@ -1,11 +1,24 @@
-<header><h1 class="display-4">Parks</h1></header>
+ <%= render 'layouts/banner' %>
 
-<%= link_to 'Add Stadium', new_park_path, class: 'btn btn-primary btn-lg' %>
-
-<div class="card">
-  <div class="card-block">
-    <ul>
-      <%= render @parks %>
-    </ul>
+<div class="container-index">
+      <div class="row">
+          <% @parks.each do |park| %>
+              <%= link_to park_path(park) do %>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="card" style="background-image: url(<%= park.image %>)">
+                  <div class="card-category"><%=park.name%>
+                  </div>
+                  <div class="card-description">
+                    <h2><%= park.description %></h2>
+                    <p><%= park.address %></p>
+                  </div>
+              </div>
+            <% end %>
+          </div>
+      <% end %>
+    </div>
+  <div class="row" align="center" >
+    <h3>Don't see the stadium you're looking for? Add one.</h3>
+    <%= link_to 'Add Stadium', new_park_path, class: 'btn btn-primary btn-lg' %>
   </div>
 </div>
