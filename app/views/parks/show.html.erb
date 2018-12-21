@@ -4,3 +4,8 @@
 <p>Photo <%= cl_image_tag(@park.image) %></p>
 <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@park.latitude},#{@park.longitude}&markers=#{@park.latitude},#{@park.longitude}&zoom=7&size=640x400&key=#{ENV['GOOGLE_API']}",
               class: 'img-fluid img-rounded', alt: "#{@park.name} on the map" %>
+
+<p>Others who have been here</p>
+<% @park.visits.each do | visit | %>
+  <p><%=visit.user.username%></p>
+<% end %>

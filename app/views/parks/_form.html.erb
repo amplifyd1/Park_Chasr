@@ -1,47 +1,63 @@
-<%= form_for @park do |f| %>
-  <fieldset class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: "form-control" %>
-  </fieldset>
 
-  <fieldset class="form-group">
-    <%= f.label :description %>
-    <%= f.text_field :description, class: "form-control" %>
-  </fieldset>
+<header><h1 class="display-4 add-park" align="center">Add a New Park</h1></header>
 
-  <h4>Enter either address or Longitude and Latitude Coordinates</h4>
-  <fieldset class="form-group">
-    <%= f.label :raw_address, 'Address' %>
-    <%= f.text_field :raw_address, class: "form-control" %>
-  </fieldset>
-  <div class="form-group row">
-    <div class="col-sm-1">
-      <%= f.label :latitude %>
-    </div>
-    <div class="col-sm-3">
-      <%= f.text_field :latitude, class: "form-control" %>
-    </div>
-    <div class="col-sm-1">
-      <%= f.label :longitude %>
-    </div>
-    <div class="col-sm-3">
-      <%= f.text_field :longitude, class: "form-control" %>
-    </div>
-    <div class="col-sm-1">
-      <%= f.label :Image %>
-    </div>
-    <div class='col-sm-3'>
-         <%= f.file_field :image%>
-    </div>
-    <!-- <div class="col-sm-4">
-      <a href="#" id="find-on-map" class="btn btn-info btn-sm">Find on the map</a>
-    </div> -->
+<div class='row'>
+  <div class="add-park-container container">
+  <div class ='col-xs-12'>
+    <%= form_for(@park, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+      <div class="form-group">
+        <div class='control-label col-sm-4'>
+        </div>
+        <div class='col-sm-4'>
+          <%= f.text_field :name, class: 'form-control', placeholder: 'Name of the BallPark', autofocus: true %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class='control-label col-sm-4'>
+        </div>
+         <div class='col-sm-4'>
+          <%= f.text_field :description, class: "form-control", placeholder: "Home Stadium of the ....." %>
+         </div>
+       </div>
+      <div class="form-group">
+        <div class='control-label col-sm-4'>
+        </div>
+         <div class='col-sm-4'>
+          <%= f.text_field :address, class: "form-control", placeholder: "Add Stadium Address or...." %>
+         </div>
+       </div>
+       <div class="form-group">
+        <div class='control-label col-sm-4'>
+        </div>
+         <div class='col-sm-4'>
+          <%= f.text_field :longitude, class: "form-control", placeholder: "...use latitude" %>
+         </div>
+       </div>
+       <div class="form-group">
+        <div class='control-label col-sm-4'>
+        </div>
+         <div class='col-sm-4'>
+          <%= f.text_field :longitude, class: "form-control", placeholder: "and longitude" %>
+         </div>
+       </div>
+       <div class="form-group add-photo">
+        <div class='control-label col-sm-4 add-photo'>
+        </div>
+         <div class='col-sm-4'>
+         <%= f.file_field :address%>
+         </div>
+        </div>
+        <div class="form-group">
+          <div class='control-label col-sm-4'>
+        </div>
+         <div class="control-label col-sm-4">
+          <%= f.submit "Add Park", class: "btn btn-primary" %>
+         </div>
+        </div>
+    <% end %>
   </div>
-
-  <%= f.submit 'Add Park', class: 'btn btn-primary' %>
-<% end %>
-<!-- <div class="card">
-  <div class="card-block">
-    <div id="map"></div>
   </div>
-</div> -->
+</div>
+
+
+

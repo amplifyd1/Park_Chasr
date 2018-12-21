@@ -6,11 +6,10 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <div class="navbar-wagon-item">
-      <%= link_to "Parks", parks_path, class: "nav-link" %>
-    </div>
     <% if user_signed_in? %>
+    <div class="navbar-wagon-item">
+      <%= link_to "My Visits", visits_path, class: "nav-link" %>
+    </div>
       <div class="navbar-wagon-item">
         <%= link_to "Profile", user_path(current_user), class: "nav-link" %>
       </div>
