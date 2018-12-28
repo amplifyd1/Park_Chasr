@@ -12,10 +12,12 @@ class VisitsController < ApplicationController
   def create
     @visit = Visit.new(visit_params)
     @user = current_user
+    @park = Park.find(params[:park_id])
     @visit.user_id = @user.id
+    @visit.park_id = @park.id
     if @visit.save
       flash[:success] = "Your Visit has been saved!"
-      redirect_to root
+      redirect_to user_visits_path(user_id: current_user)
     else
       render 'new'
     end

@@ -8,7 +8,7 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <% if user_signed_in? %>
     <div class="navbar-wagon-item">
-      <%= link_to "My Visits", visits_path, class: "nav-link" %>
+      <%= link_to "My Visits", user_visits_path(user_id: current_user), class: "nav-link" %>
     </div>
       <div class="navbar-wagon-item">
         <%= link_to "Profile", user_path(current_user), class: "nav-link" %>

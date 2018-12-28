@@ -1,11 +1,52 @@
-<header><h1 class="display-4"><%= @park.name %></h1></header>
-<p>Address: <%= @park.address %></p>
-<p>Coordinates: <%= @park.latitude %> <%= @park.longitude %></p>
-<p>Photo <%= cl_image_tag(@park.image) %></p>
-<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@park.latitude},#{@park.longitude}&markers=#{@park.latitude},#{@park.longitude}&zoom=7&size=640x400&key=#{ENV['GOOGLE_API']}",
-              class: 'img-fluid img-rounded', alt: "#{@park.name} on the map" %>
 
-<p>Others who have been here</p>
-<% @park.visits.each do | visit | %>
-  <p><%=visit.user.username%></p>
-<% end %>
+
+<img style="background-image: url(<%= cl_image_path @park.image %>)" class="park-banner">
+</div>
+
+
+
+<div>
+  <div class="show-container">
+    <div class="show-cards-container">
+      <div class="park-profile show-card">
+        <div class="park-name">
+          <h1><%= @park.name %></h1>
+        </div>
+
+        <div class='flex'>
+              <div class='flex-column'>
+               <i class="fas fa-baseball-ball"></i>
+                <p><%= @park.description.capitalize %></p>
+              </div>
+              <div class="flex-column">
+                <i class="fas fa-map-marker-alt"></i>
+                <p><%= @park.address %></p>
+              </div>
+              <div class='flex-column'>
+                <i class="fas fa-map-marker-alt"></i> <p><%= @park.latitude %> </p>
+              </div>
+              <div class='flex-column'>
+                <i class="fas fa-map-marker-alt"></i> <p><%= @park.longitude %></p>
+              </div>
+        </div>
+      </div>
+
+      <div class="show-card park-description">
+        <p>
+          <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@park.latitude},#{@park.longitude}&markers=#{@park.latitude},#{@park.longitude}&zoom=7&size=640x400&key=#{ENV['GOOGLE_API']}",
+              class: 'img-fluid img-rounded', alt: "#{@park.name} on the map" %>
+        </p>
+      </div>
+      <div class="show-card park-visits">
+          <h2>Your Distance from Stadium: <%= current_user.distance_to(@park).to_i %> milies  </h2>
+          <p><%=@park.visits.count %> other users have been to this stadium</p>
+      </div>
+    </div>
+    <div class="show-card book-form">
+        <%= simple_form_for(:visit, url: park_visits_path(park_id: @park.id), method: :post) do |f| %>
+          <%= f.input :date, as: :string, required: true, placeholder: "YYYY-MM-DD"  %>
+          <%= f.submit "Create Your Visit", class: "form-btn", id: "sweet-alert"%>
+        <% end %>
+      </div>
+</div>
+</div>

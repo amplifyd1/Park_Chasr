@@ -23,14 +23,14 @@
         <div class='control-label col-sm-4'>
         </div>
          <div class='col-sm-4'>
-          <%= f.text_field :address, class: "form-control", placeholder: "Add Stadium Address or...." %>
+          <%= f.text_field :raw_address, class: "form-control", placeholder: "Add Stadium Address or...." %>
          </div>
        </div>
        <div class="form-group">
         <div class='control-label col-sm-4'>
         </div>
          <div class='col-sm-4'>
-          <%= f.text_field :longitude, class: "form-control", placeholder: "...use latitude" %>
+          <%= f.text_field :latitude, class: "form-control", placeholder: "...use latitude" %>
          </div>
        </div>
        <div class="form-group">
@@ -44,7 +44,7 @@
         <div class='control-label col-sm-4 add-photo'>
         </div>
          <div class='col-sm-4'>
-         <%= f.file_field :address%>
+         <%= f.file_field :image%>
          </div>
         </div>
         <div class="form-group">
