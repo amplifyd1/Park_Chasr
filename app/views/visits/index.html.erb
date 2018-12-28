@@ -1,7 +1,21 @@
-<% @visits.each do |visit| %>
-  </br>
-  </br>
-  <p><%= visit.user_id %></p>
-  <p><%= visit.park.name %></p>
-  <p>Distance<%= visit.distance %></p>
-<% end %>
+<div class="container-index">
+      <div class="row">
+          <% current_user.visits.each do |visit| %>
+              <%= link_to user_visit_path(current_user,visit) do %>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="card" style="background-image: url(<%= visit.park.image %>)">
+                  <div class="card-category"><%=visit.park.name%>
+                  </div>
+                  <div class="card-description">
+                    <h2><%= visit.park.description %></h2>
+                    <p><%= visit.park.address %></p>
+
+                  </div>
+                  <div>
+                    <p class="card-bottom">You Visited <strong><%= visit.park.name %></strong> On <%= visit.date %></p>
+                  </div>
+              </div>
+            <% end %>
+          </div>
+      <% end %>
+    </div>

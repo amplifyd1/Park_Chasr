@@ -11,9 +11,6 @@
       <%= link_to "My Visits", user_visits_path(user_id: current_user), class: "nav-link" %>
     </div>
       <div class="navbar-wagon-item">
-        <%= link_to "Profile", user_path(current_user), class: "nav-link" %>
-      </div>
-      <div class="navbar-wagon-item">
         <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
       </div>
     <% else %>
