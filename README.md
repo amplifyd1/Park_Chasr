@@ -1,4 +1,4 @@
-This purpose of this app was to demonstrated geocoding in a web application.  The premise of the program is to give the user a platform to keep track of which baseball stadiums that user has visited.  It provides basic information of the stadium and event, including date attended, address, coordinates and distance of user from the stadium location. 
+The premise of the program is to give the user a platform to keep track of which baseball stadiums that user has visited.  It provides basic information of the stadium and event, including date attended, address, coordinates and distance of user from the stadium location. 
 
 To use this app locally, add your Google API key in the .ENV file:
 ```
