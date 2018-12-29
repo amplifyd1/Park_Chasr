@@ -1,4 +1,4 @@
-The premise of the program is to give the user a platform to keep track of which baseball stadiums that user has visited.  It provides basic information of the stadium and event, including date attended, address, coordinates and distance of user from the stadium location. 
+The premise of the program is to give the user a platform to keep track of which baseball stadiums that user has visited.  It provides basic information of the stadium and event, including date attended, address, coordinates and distance of user from the stadium location.  A feature I would like to implement, is to have all the stadiums pinned to a dynamic map with the user being able to select each one.  Additionally, it would be nice to have the stadium information pulled instead of coming from the user or hard coded.  
 
 To use this app locally, add your Google API key in the .ENV file:
 ```
