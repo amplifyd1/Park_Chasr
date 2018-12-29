@@ -11,6 +11,7 @@ gem 'coffee-rails'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'devise'
+gem 'faker'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
@@ -23,12 +24,16 @@ gem 'webpacker'
 gem 'geocoder'
 gem 'jquery-rails'
 gem 'bootstrap-datepicker-rails'
+gem 'factory_bot'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
 group :development, :test do
+  gem 'rspec-rails', '~> 3.8'
+  gem 'shoulda-matchers', '4.0.0.rc1'
+  gem 'rails-controller-testing'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'listen', '~> 3.0.5'
