@@ -12,3 +12,4 @@ If you would like to see and run the RSpec tests for the application, you can ru
 ```bundle exec RSpec``` 
 
 Before starting the application be sure to run ```bundle install``` to install all the dependencies need for this application.
+For a list of dependecies see the Gemfile and Gemfile.lock files.
