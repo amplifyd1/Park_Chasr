@@ -1,9 +1,10 @@
 class Park < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true
-  validates :address, presence: true, if: -> { latitude.nil? || longitude.nil? }
-  validates :longitude, presence: true, if: -> { address.nil? }
-  validates :latitude, presence: true, if: -> { address.nil? }
+  validates :image, presence: true
+  # validates :address, presence: true, if: -> { latitude.nil? || longitude.nil? }
+  # validates :longitude, presence: true, if: -> { address.nil? }
+  # validates :latitude, presence: true, if: -> { address.nil? }
   mount_uploader :image, ImageUploader
   attr_accessor :raw_address
   geocoded_by :raw_address

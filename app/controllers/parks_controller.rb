@@ -10,21 +10,11 @@ class ParksController < ApplicationController
   def create
     @park = Park.new(park_params)
     if @park.save
-      flash[:success] = "BallPark added!"
       redirect_to root_path
     else
       render 'new'
     end
-    # @park = Park.new(park_params)
-    # respond_to do |format|
-    #   if @park.save
-    #     format.html { redirect_to root_path, notice: 'Place was successfully created.' }
-    #     format.js {}
-    #   else
-    #     format.html { render :new }
-    #     format.js {}
-    #   end
-    # end
+
   end
 
   def show
