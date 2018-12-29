@@ -1,7 +1,15 @@
+<div class="park-banner">
+  <div class="container park-banner-text">
+  <h3>Your Parks</h3>
+  </div>
+<!-- <img style="background-image: url(../assests/images/crowd.jpg)" class="park-banner"> -->
+</div>
+
+
 <div class="container-index">
       <div class="row">
           <% current_user.visits.each do |visit| %>
-              <%= link_to user_visit_path(current_user,visit) do %>
+              <%= link_to park_path(visit.park) do %>
             <div class="col-xs-12 col-sm-6 col-md-4">
               <div class="card" style="background-image: url(<%= visit.park.image %>)">
                   <div class="card-category"><%=visit.park.name%>

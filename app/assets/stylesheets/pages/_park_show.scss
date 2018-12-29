@@ -13,9 +13,10 @@
 }
 
 .park-banner {
+  background:url(crowd.jpg) center center;
   color: white;
   text-align: center;
-  height: 450px;
+  height: 300px;
   // object-fit: cover !important;
   background-size: cover !important;
   background-position: 50% 50%;
@@ -113,3 +114,12 @@
   display: block;
   width: 160px;
 }
+
+.park-banner-text
+h3 {
+  color: white;
+  opacity: .8;
+  font-size: 64px;
+}
+
+
